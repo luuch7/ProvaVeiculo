@@ -10,4 +10,5 @@ public class VehicleosApplication {
 		SpringApplication.run(VehicleosApplication.class, args);
 	}
 
+		
 }
