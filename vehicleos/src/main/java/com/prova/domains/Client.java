@@ -1,6 +1,12 @@
 package com.prova.domains;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import com.prova.domains.enums.ClientType;
 
 public class Client {
     
@@ -11,7 +17,8 @@ public class Client {
     private String password;
     private String dateBirth;
     private String phoneNumber;
-
+    private Set<Integer> clientType = new HashSet<>();
+    
     public Client(){}
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
@@ -23,6 +30,14 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
+    }
+
+    public Set<ClientType> getClientType() {
+        return clientType.stream().map(x -> ClientType.toEnum(x)).collect(Collectors.toSet());
+    }
+
+    public void addClientType(ClientType clientType) {
+        this.clientType.add(clientType.getId());
     }
 
     public UUID getId() {
@@ -111,6 +126,8 @@ public class Client {
             return false;
         return true;
     }
+
+    
 
     
 }
