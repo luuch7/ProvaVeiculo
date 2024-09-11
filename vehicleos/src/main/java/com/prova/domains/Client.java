@@ -17,6 +17,7 @@ public class Client {
     private String dateBirth;
     private String phoneNumber;
     private Set<Integer> clientType = new HashSet<>();
+    private Address address;
     
     public Client(){
         super();
