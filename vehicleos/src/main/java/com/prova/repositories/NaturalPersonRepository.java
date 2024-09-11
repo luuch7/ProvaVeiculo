@@ -1,15 +1,13 @@
 package com.prova.repositories;
 
 import java.util.UUID;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import com.prova.domains.Vehicle;
+
+import com.prova.domains.NaturalPerson;
 
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle,UUID>{
-
-}
-
+public interface NaturalPersonRepository extends JpaRepository<NaturalPerson, UUID>{
     
-
-
+}
