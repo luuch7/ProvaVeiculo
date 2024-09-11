@@ -8,8 +8,8 @@ public class NaturalPerson extends Client {
     private NaturalPerson naturalPerson;
 
     public NaturalPerson(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber) {
-        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber);
+            String phoneNumber, Address address) {
+        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber, address);
     }
 
     public NaturalPerson(){

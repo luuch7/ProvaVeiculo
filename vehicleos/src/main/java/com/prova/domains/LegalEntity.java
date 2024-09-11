@@ -12,8 +12,8 @@ public class LegalEntity extends Client{
     }
 
     public LegalEntity(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber) {
-        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber);
+            String phoneNumber, Address address) {
+        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber, address);
     }
 
     public Client getClient() {

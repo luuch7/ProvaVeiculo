@@ -25,7 +25,7 @@ public class Client {
     }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber) {
+            String phoneNumber, Address address) {
         this.id = id;
         this.name = name;
         this.cpfCnpj = cpfCnpj;
@@ -33,6 +33,7 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
+        this.address = address;
         addClientType(null);
     }
 
