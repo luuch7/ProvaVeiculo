@@ -1,4 +1,3 @@
-package com.prova.Repositories;
 package com.prova.repositories;
 
 import java.util.UUID;
