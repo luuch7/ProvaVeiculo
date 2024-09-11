@@ -19,7 +19,10 @@ public class Client {
     private String phoneNumber;
     private Set<Integer> clientType = new HashSet<>();
     
-    public Client(){}
+    public Client(){
+        super();
+        addClientType(null);
+    }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
             String phoneNumber) {
@@ -30,6 +33,7 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
+        addClientType(null);
     }
 
     public Set<ClientType> getClientType() {
