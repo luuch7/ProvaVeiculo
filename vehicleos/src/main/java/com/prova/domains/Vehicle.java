@@ -2,17 +2,31 @@ package com.prova.domains;
 
 import com.prova.domains.enums.VehicleType;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "vehicle")
 public class Vehicle {
     
+    @Id
     private long id;
+
     private String name;
     private String brand;
     private String palte;
     private int year;
     private String color;
+
+    @Column(unique = true)
     private String document;
+    
     private String fuelType;
     private double price;
+
+    //se der erro é aqui :)
     private VehicleType vehicleType;
 
     public Vehicle() {

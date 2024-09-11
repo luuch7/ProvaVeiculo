@@ -2,6 +2,11 @@ package com.prova.domains;
 
 import java.util.UUID;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "natural_person")
 public class NaturalPerson extends Client {
     
     //se der bom  é o private

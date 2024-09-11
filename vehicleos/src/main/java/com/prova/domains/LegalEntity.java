@@ -2,6 +2,11 @@ package com.prova.domains;
 
 import java.util.UUID;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "legal_entity")
 public class LegalEntity extends Client{
     
     //se der bo é esse private

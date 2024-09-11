@@ -7,15 +7,36 @@ import java.util.stream.Collectors;
 
 import com.prova.domains.enums.ClientType;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "client")
 public class Client {
     
+    @Id
+    @GeneratedValue
     private UUID id;
+
+    @Column(unique = true)
     private String name;
+
+    @Column(unique = true)
     private String cpfCnpj;
     private String email;
     private String password;
     private String dateBirth;
     private String phoneNumber;
+
+    //se der erro é aqui
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "clientes")
     private Set<Integer> clientType = new HashSet<>();
     private Address address;
     
@@ -37,6 +58,20 @@ public class Client {
         addClientType(null);
     }
 
+    
+    public void setClientType(Set<Integer> clientType) {
+        this.clientType = clientType;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    //get e set do enum
     public Set<ClientType> getClientType() {
         return clientType.stream().map(x -> ClientType.toEnum(x)).collect(Collectors.toSet());
     }

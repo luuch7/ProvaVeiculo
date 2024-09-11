@@ -3,15 +3,29 @@ package com.prova.domains;
 import java.time.LocalDate;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "purchase")
 public class Purchase {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String saleCode;
     private String transactionMethod;
     private String observation;
+
+    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate date = LocalDate.now();
+
+    //se der erro é aqui
     private Vehicle vehicle;
 
     public Purchase() {
