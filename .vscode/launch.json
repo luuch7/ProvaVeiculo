@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-VehicleosApplication<vehicleos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.prova.vehicleos.VehicleosApplication",
+            "projectName": "vehicleos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

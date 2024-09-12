@@ -3,14 +3,18 @@ package com.prova.domains;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "natural_person")
 public class NaturalPerson extends Client {
     
-    //se der bom  é o private
-    private NaturalPerson naturalPerson;
+    //se der bo é o private
+    @ManyToOne
+    private List<Client> clients;
 
     public NaturalPerson(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
             String phoneNumber, Address address) {
@@ -21,13 +25,14 @@ public class NaturalPerson extends Client {
         super();
     }
 
-    public NaturalPerson getNaturalPerson() {
-        return naturalPerson;
+    public List<Client> getClients() {
+        return clients;
     }
 
-    public void setNaturalPerson(NaturalPerson naturalPerson) {
-        this.naturalPerson = naturalPerson;
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
     }
 
+    
     
 }
