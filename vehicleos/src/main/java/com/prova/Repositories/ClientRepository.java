@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.prova.domains.Client;
 
 @Repository
-private interface ClientRepository extends JpaRepository<Client,UUID> {
+public interface ClientRepository extends JpaRepository<Client,UUID> {
 
     
 }
