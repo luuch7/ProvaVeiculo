@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.prova.domains.Vehicle;
 
 @Repository
-public interface VehicleRepository extends JpaRepository<Vehicle,UUID>{
+public interface VehicleRepository extends JpaRepository<Vehicle,long>{
 
 }
 

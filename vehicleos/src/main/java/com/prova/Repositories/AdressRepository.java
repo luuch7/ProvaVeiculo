@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.prova.domains.Address;
 
 @Repository
-public interface AdressRepository extends JpaRepository<Address,UUID>{
+public interface AdressRepository extends JpaRepository<Address,Integer>{
     
 }
