@@ -1,4 +1,4 @@
-package com.prova.Repositories;
+package com.prova.repositories;
 
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.prova.domains.Address;
 
 @Repository
-private AdressRepository extends JpaRepository<Address,UUID>{
+public interface AdressRepository extends JpaRepository<Address,UUID>{
     
 }
