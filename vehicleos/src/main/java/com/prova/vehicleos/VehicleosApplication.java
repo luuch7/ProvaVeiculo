@@ -2,9 +2,13 @@ package com.prova.vehicleos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+@EntityScan(basePackages = {"com.prova.domains","com.prova.domains.enums"})
 @SpringBootApplication
+
 public class VehicleosApplication {
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(VehicleosApplication.class, args);
