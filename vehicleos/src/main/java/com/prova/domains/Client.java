@@ -10,10 +10,13 @@ import com.prova.domains.enums.ClientType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,7 +24,7 @@ import jakarta.persistence.Table;
 public class Client {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(unique = true)
@@ -36,9 +39,11 @@ public class Client {
 
     //se der erro é aqui
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "clientes")
+    @OneToMany(mappedBy  = "clientes")
     private Set<Integer> clientType = new HashSet<>();
-    private Address address;
+
+    
+    //private Address address;
     
     public Client(){
         super();
@@ -46,7 +51,7 @@ public class Client {
     }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber, Address address) {
+            String phoneNumber /*,Address address*/) {
         this.id = id;
         this.name = name;
         this.cpfCnpj = cpfCnpj;
@@ -54,7 +59,7 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
-        this.address = address;
+        //this.address = address;
         addClientType(null);
     }
 
@@ -63,13 +68,13 @@ public class Client {
         this.clientType = clientType;
     }
 
-    public Address getAddress() {
+    /*public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
-    }
+    }*/
 
     //get e set do enum
     public Set<ClientType> getClientType() {
