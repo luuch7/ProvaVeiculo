@@ -1,20 +1,15 @@
 package com.prova.domains;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import com.prova.domains.enums.VehicleType;
 
-import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
@@ -37,19 +32,15 @@ public class Vehicle {
     private String fuelType;
     private double price;
 
-    //se der erro é aqui :)
-     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "tiposveiculos", joinColumns = @JoinColumn(name = "vehicle_id"))
-    @Column(name = "vehicle_type")
-    private Set<Integer> vehicleType = new HashSet<>();
+    @Enumerated(EnumType.STRING)
+    private VehicleType vehicleType;
+    
+    public Vehicle(){
 
-    public Vehicle() {
-        super();
-        addVehicleType(null);
     }
 
     public Vehicle(long id, String name, String brand, String palte, int year, String color, String document,
-            String fuelType, double price ) {
+            String fuelType, double price, VehicleType vehicleType) {
         this.id = id;
         this.name = name;
         this.brand = brand;
@@ -59,17 +50,7 @@ public class Vehicle {
         this.document = document;
         this.fuelType = fuelType;
         this.price = price;
-        addVehicleType(null);
-    }
-
-    //get e set vehicletype
-
-    public Set<VehicleType> getVehicleType() {
-        return vehicleType.stream().map(x -> VehicleType.toEnum(x)).collect(Collectors.toSet());
-    }
-
-    public void addVehicleType(VehicleType vehicleType) {
-        this.vehicleType.add(vehicleType.getId());
+        this.vehicleType = vehicleType;
     }
 
     public long getId() {
@@ -144,7 +125,13 @@ public class Vehicle {
         this.price = price;
     }
 
-    //get e set
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
 
     @Override
     public int hashCode() {
@@ -167,7 +154,7 @@ public class Vehicle {
             return false;
         return true;
     }
-    
+
     
     
 }
