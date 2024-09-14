@@ -1,63 +1,56 @@
 package com.prova.domains;
 
-
-import com.prova.domains.enums.VehicleType;
-
-import jakarta.persistence.Column;
+import java.util.UUID;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 
 @Entity
 @Table(name = "vehicle")
 public class Vehicle {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     private String name;
     private String brand;
-    private String palte;
+    private String plate;  // Corrigido de "palte" para "plate"
     private int year;
     private String color;
 
     @Column(unique = true)
     private String document;
-    
+
     private String fuelType;
     private double price;
 
-    @Enumerated(EnumType.STRING)
-    private VehicleType vehicleType;
-    
-    public Vehicle(){
-
+    // Construtor padrão necessário para o Hibernate
+    public Vehicle() {
     }
 
-    public Vehicle(long id, String name, String brand, String palte, int year, String color, String document,
-            String fuelType, double price, VehicleType vehicleType) {
+    // Construtor com todos os parâmetros
+    public Vehicle(UUID id, String name, String brand, String plate, int year, String color, String document,
+                   String fuelType, double price) {
         this.id = id;
         this.name = name;
         this.brand = brand;
-        this.palte = palte;
+        this.plate = plate;  // Corrigido de "palte" para "plate"
         this.year = year;
         this.color = color;
         this.document = document;
         this.fuelType = fuelType;
         this.price = price;
-        this.vehicleType = vehicleType;
     }
 
-    public long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -77,12 +70,12 @@ public class Vehicle {
         this.brand = brand;
     }
 
-    public String getPalte() {
-        return palte;
+    public String getPlate() {
+        return plate;
     }
 
-    public void setPalte(String palte) {
-        this.palte = palte;
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 
     public int getYear() {
@@ -125,19 +118,11 @@ public class Vehicle {
         this.price = price;
     }
 
-    public VehicleType getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(VehicleType vehicleType) {
-        this.vehicleType = vehicleType;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + (int) (id ^ (id >>> 32));
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -150,11 +135,11 @@ public class Vehicle {
         if (getClass() != obj.getClass())
             return false;
         Vehicle other = (Vehicle) obj;
-        if (id != other.id)
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
             return false;
         return true;
     }
-
-    
-    
 }
