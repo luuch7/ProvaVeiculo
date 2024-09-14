@@ -2,32 +2,24 @@ package com.prova.domains;
 
 import java.util.UUID;
 
+import com.prova.domains.enums.ClientType;
+
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "natural_person")
 public class NaturalPerson extends Client {
-    
-    //se der bom  é o private
-    private NaturalPerson naturalPerson;
 
     public NaturalPerson(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber, Address address) {
-        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber, address);
+            String phoneNumber) {
+        super(id, name, cpfCnpj, email, password, dateBirth, phoneNumber);
+        addClientType(ClientType.NATURAL_PERSON);
     }
 
     public NaturalPerson(){
         super();
+        addClientType(ClientType.NATURAL_PERSON);
     }
 
-    public NaturalPerson getNaturalPerson() {
-        return naturalPerson;
-    }
-
-    public void setNaturalPerson(NaturalPerson naturalPerson) {
-        this.naturalPerson = naturalPerson;
-    }
-
+    
     
 }

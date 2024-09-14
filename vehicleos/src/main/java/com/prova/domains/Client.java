@@ -13,6 +13,7 @@ import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -21,7 +22,7 @@ import jakarta.persistence.Table;
 public class Client {
     
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(unique = true)
@@ -36,17 +37,18 @@ public class Client {
 
     //se der erro é aqui
     @ElementCollection(fetch = FetchType.EAGER)
-    @CollectionTable(name = "clientes")
+    @CollectionTable(name = "client_types")
     private Set<Integer> clientType = new HashSet<>();
-    private Address address;
+
+    
+    //private Address address;
     
     public Client(){
         super();
-        addClientType(null);
     }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber, Address address) {
+            String phoneNumber /*,Address address*/) {
         this.id = id;
         this.name = name;
         this.cpfCnpj = cpfCnpj;
@@ -54,30 +56,28 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
-        this.address = address;
-        addClientType(null);
+        //this.address = address;
     }
 
-    
-    public void setClientType(Set<Integer> clientType) {
-        this.clientType = clientType;
-    }
-
-    public Address getAddress() {
+    /*public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
-    }
+    }*/
 
-    //get e set do enum
+    //get e set do enum igual a apostila
     public Set<ClientType> getClientType() {
         return clientType.stream().map(x -> ClientType.toEnum(x)).collect(Collectors.toSet());
     }
 
     public void addClientType(ClientType clientType) {
         this.clientType.add(clientType.getId());
+    }
+
+    public void setClientType(Set<Integer> clientType){
+        this.clientType = clientType;
     }
 
     public UUID getId() {

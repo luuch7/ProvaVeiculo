@@ -4,19 +4,19 @@ public enum VehicleType {
 
     CAR(0,"ROLE_CAR"),MOTOCICLE(1,"ROLE_MOTOCICLE"),TRUCK(2,"ROLE_TRUCK");
     
-    private int id;
+    private Integer id;
     private String vehicleType;
 
-    private VehicleType(int id, String vehicleType) {
+    private VehicleType(Integer id, String vehicleType) {
         this.id = id;
         this.vehicleType = vehicleType;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

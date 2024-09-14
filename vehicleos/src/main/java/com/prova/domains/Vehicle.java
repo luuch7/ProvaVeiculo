@@ -1,9 +1,14 @@
 package com.prova.domains;
 
+
 import com.prova.domains.enums.VehicleType;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -12,6 +17,7 @@ import jakarta.persistence.Table;
 public class Vehicle {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
@@ -26,10 +32,11 @@ public class Vehicle {
     private String fuelType;
     private double price;
 
-    //se der erro é aqui :)
+    @Enumerated(EnumType.STRING)
     private VehicleType vehicleType;
+    
+    public Vehicle(){
 
-    public Vehicle() {
     }
 
     public Vehicle(long id, String name, String brand, String palte, int year, String color, String document,
@@ -147,7 +154,7 @@ public class Vehicle {
             return false;
         return true;
     }
-    
+
     
     
 }

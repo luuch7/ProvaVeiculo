@@ -1,0 +1,17 @@
+com\prova\repositories\VehicleRepository.class
+com\prova\domains\Address.class
+com\prova\domains\LegalEntity.class
+com\prova\domains\enums\TransationType.class
+com\prova\domains\Client.class
+com\prova\domains\enums\ClientType.class
+com\prova\domains\enums\VehicleSale.class
+com\prova\repositories\ClientRepository.class
+com\prova\repositories\PurchaseRepository.class
+com\prova\domains\Purchase.class
+com\prova\repositories\LegalEntityRepository.class
+com\prova\repositories\AdressRepository.class
+com\prova\domains\NaturalPerson.class
+com\prova\repositories\NaturalPersonRepository.class
+com\prova\vehicleos\VehicleosApplication.class
+com\prova\domains\Vehicle.class
+com\prova\domains\enums\VehicleType.class
