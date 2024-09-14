@@ -16538,3 +16538,435 @@ Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VEHICLEE" not found; 
 2024-09-14T15:53:55.642-03:00  INFO 23452 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-09-14T15:53:55.644-03:00  INFO 23452 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 >>>>>>> Stashed changes
+2024-09-14T16:00:17.922-03:00  INFO 9920 --- [restartedMain] c.prova.vehicleos.VehicleosApplication   : Starting VehicleosApplication using Java 17.0.10 with PID 9920 (C:\Users\luuch\OneDrive\Documentos\Faculdade\Jefin\2024\prova java\ProvaVeiculo\vehicleos\target\classes started by luuch in C:\Users\luuch\OneDrive\Documentos\Faculdade\Jefin\2024\prova java\ProvaVeiculo)
+2024-09-14T16:00:17.926-03:00  INFO 9920 --- [restartedMain] c.prova.vehicleos.VehicleosApplication   : The following 1 profile is active: "test"
+2024-09-14T16:00:17.983-03:00  INFO 9920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-09-14T16:00:17.984-03:00  INFO 9920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-09-14T16:00:19.149-03:00  INFO 9920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-09-14T16:00:19.173-03:00  INFO 9920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 JPA repository interfaces.
+2024-09-14T16:00:20.100-03:00  INFO 9920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-09-14T16:00:20.119-03:00  INFO 9920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-09-14T16:00:20.120-03:00  INFO 9920 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-09-14T16:00:20.205-03:00  INFO 9920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-09-14T16:00:20.206-03:00  INFO 9920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2222 ms
+2024-09-14T16:00:20.405-03:00  INFO 9920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-09-14T16:00:20.640-03:00  INFO 9920 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:provaaveiculo user=SA
+2024-09-14T16:00:20.642-03:00  INFO 9920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-09-14T16:00:20.656-03:00  INFO 9920 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:provaaveiculo'
+2024-09-14T16:00:20.930-03:00  INFO 9920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-09-14T16:00:21.002-03:00  INFO 9920 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-09-14T16:00:21.054-03:00  INFO 9920 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-09-14T16:00:21.154-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@3a34a8b2
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration boolean -> org.hibernate.type.BasicTypeReference@3a34a8b2
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@3a34a8b2
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@63a9d05a
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@63a9d05a
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration true_false -> org.hibernate.type.BasicTypeReference@777a16e2
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@777a16e2
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@3d51cc45
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@3d51cc45
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@22bf8265
+2024-09-14T16:00:21.156-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte -> org.hibernate.type.BasicTypeReference@22bf8265
+2024-09-14T16:00:21.157-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@22bf8265
+2024-09-14T16:00:21.157-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary -> org.hibernate.type.BasicTypeReference@fb9bd68
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@fb9bd68
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [B -> org.hibernate.type.BasicTypeReference@fb9bd68
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@4521a065
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@4521a065
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration image -> org.hibernate.type.BasicTypeReference@7310754
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration blob -> org.hibernate.type.BasicTypeReference@346ad076
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@346ad076
+2024-09-14T16:00:21.158-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@32110e0e
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@7a7bb2a1
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@75ff011d
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration short -> org.hibernate.type.BasicTypeReference@75ff011d
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@75ff011d
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration integer -> org.hibernate.type.BasicTypeReference@177486b4
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration int -> org.hibernate.type.BasicTypeReference@177486b4
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@177486b4
+2024-09-14T16:00:21.159-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@2d2f9b2a
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration long -> org.hibernate.type.BasicTypeReference@2d2f9b2a
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@2d2f9b2a
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@ae6ca94
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration float -> org.hibernate.type.BasicTypeReference@ae6ca94
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@ae6ca94
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@79cd53c
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration double -> org.hibernate.type.BasicTypeReference@79cd53c
+2024-09-14T16:00:21.160-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@79cd53c
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@346ea25d
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@346ea25d
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@65c99931
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@65c99931
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration character -> org.hibernate.type.BasicTypeReference@59474d76
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char -> org.hibernate.type.BasicTypeReference@59474d76
+2024-09-14T16:00:21.161-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@59474d76
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@38134657
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration string -> org.hibernate.type.BasicTypeReference@792e7742
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@792e7742
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nstring -> org.hibernate.type.BasicTypeReference@50076947
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration characters -> org.hibernate.type.BasicTypeReference@3348b2cc
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration char[] -> org.hibernate.type.BasicTypeReference@3348b2cc
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration [C -> org.hibernate.type.BasicTypeReference@3348b2cc
+2024-09-14T16:00:21.162-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@11cb6b0c
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration text -> org.hibernate.type.BasicTypeReference@1b558a10
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ntext -> org.hibernate.type.BasicTypeReference@7073856c
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration clob -> org.hibernate.type.BasicTypeReference@6db977c
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@6db977c
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration nclob -> org.hibernate.type.BasicTypeReference@4c821fa0
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@4c821fa0
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@7bb0192a
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@1784abd5
+2024-09-14T16:00:21.163-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@4dbebe2e
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@119dd726
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@6a1fe576
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@58f721e3
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> org.hibernate.type.BasicTypeReference@6000bb1d
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@6000bb1d
+2024-09-14T16:00:21.164-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@1fdb74dc
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@1fdb74dc
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@afa0604
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@afa0604
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@6b63d681
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@6b63d681
+2024-09-14T16:00:21.165-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@ede40a3
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@ede40a3
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@4ae7b830
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@10774d4e
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@6555561f
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@6555561f
+2024-09-14T16:00:21.166-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@19f2d94e
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@6e23c478
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4414f9cf
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@b3eaafc
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@b3eaafc
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@4893a7c
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@74792e91
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration date -> org.hibernate.type.BasicTypeReference@17c07b50
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@17c07b50
+2024-09-14T16:00:21.167-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration time -> org.hibernate.type.BasicTypeReference@69575a1e
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@69575a1e
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@24c0c792
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@24c0c792
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@24c0c792
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar -> org.hibernate.type.BasicTypeReference@1970683d
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@1970683d
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@1970683d
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@d7e9ab8
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@5eaaa6a3
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration instant -> org.hibernate.type.BasicTypeReference@7c7416b3
+2024-09-14T16:00:21.168-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@7c7416b3
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid -> org.hibernate.type.BasicTypeReference@665fb880
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@665fb880
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@665fb880
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@1f8d55a9
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@14996745
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration class -> org.hibernate.type.BasicTypeReference@48042aeb
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@48042aeb
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration currency -> org.hibernate.type.BasicTypeReference@538400d3
+2024-09-14T16:00:21.169-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Currency -> org.hibernate.type.BasicTypeReference@538400d3
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@538400d3
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration locale -> org.hibernate.type.BasicTypeReference@26513717
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@26513717
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration serializable -> org.hibernate.type.BasicTypeReference@792dcfd7
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@792dcfd7
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration timezone -> org.hibernate.type.BasicTypeReference@1017e16b
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@1017e16b
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@63e6f922
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@63e6f922
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration url -> org.hibernate.type.BasicTypeReference@4c2093c6
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@4c2093c6
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration vector -> org.hibernate.type.BasicTypeReference@5b64bee2
+2024-09-14T16:00:21.170-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration row_version -> org.hibernate.type.BasicTypeReference@74d7105c
+2024-09-14T16:00:21.178-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration object -> org.hibernate.type.JavaObjectType@f44cd89
+2024-09-14T16:00:21.178-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@f44cd89
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration null -> org.hibernate.type.NullType@533cf9f0
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@1c5c5dd9
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@3ff52c26
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@3e0a3e85
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@a4da3cd
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@740185c8
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@62031372
+2024-09-14T16:00:21.180-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@d12f7a1
+2024-09-14T16:00:21.181-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@6a267e05
+2024-09-14T16:00:21.440-03:00  INFO 9920 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-09-14T16:00:21.552-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NCharTypeDescriptor) replaced previous registration(CharTypeDescriptor)
+2024-09-14T16:00:21.552-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NVarcharTypeDescriptor) replaced previous registration(VarcharTypeDescriptor)
+2024-09-14T16:00:21.553-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(LongNVarcharTypeDescriptor) replaced previous registration(LongVarcharTypeDescriptor)
+2024-09-14T16:00:21.555-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(NClobTypeDescriptor(DEFAULT)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-09-14T16:00:21.557-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(2005, ClobTypeDescriptor(STREAM_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2024-09-14T16:00:21.559-03:00 DEBUG 9920 --- [restartedMain] o.h.t.d.jdbc.spi.JdbcTypeRegistry        : addDescriptor(TimestampUtcDescriptor) replaced previous registration(TimestampUtcDescriptor)
+2024-09-14T16:00:21.569-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration org.hibernate.type.DurationType -> basicType@1(java.time.Duration,3015)
+2024-09-14T16:00:21.569-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration Duration -> basicType@1(java.time.Duration,3015)
+2024-09-14T16:00:21.569-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.Duration -> basicType@1(java.time.Duration,3015)
+2024-09-14T16:00:21.573-03:00 DEBUG 9920 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6e938e71] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@41db94bb]
+2024-09-14T16:00:22.657-03:00  INFO 9920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-09-14T16:00:22.659-03:00 DEBUG 9920 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@6e938e71] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@1c8bf252]
+2024-09-14T16:00:22.674-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists address cascade 
+2024-09-14T16:00:22.678-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists client cascade 
+2024-09-14T16:00:22.678-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists client_types cascade 
+2024-09-14T16:00:22.678-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists purchase cascade 
+2024-09-14T16:00:22.679-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    drop table if exists vehicle cascade 
+2024-09-14T16:00:22.684-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    create table address (
+        id integer generated by default as identity,
+        number integer unique,
+        country varchar(255),
+        neighborhood varchar(255),
+        state varchar(255),
+        street varchar(255),
+        zip_code varchar(255),
+        primary key (id)
+    )
+2024-09-14T16:00:22.693-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    create table client (
+        id uuid not null,
+        dtype varchar(31) not null,
+        cpf_cnpj varchar(255) unique,
+        date_birth varchar(255),
+        email varchar(255),
+        name varchar(255) unique,
+        password varchar(255),
+        phone_number varchar(255),
+        primary key (id)
+    )
+2024-09-14T16:00:22.696-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    create table client_types (
+        client_type integer,
+        client_id uuid not null
+    )
+2024-09-14T16:00:22.698-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    create table purchase (
+        date date,
+        vehiclee bigint,
+        id uuid not null,
+        observation varchar(255),
+        sale_code varchar(255),
+        transaction_method varchar(255),
+        primary key (id)
+    )
+2024-09-14T16:00:22.700-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    create table vehicle (
+        price float(53) not null,
+        vehicle_type tinyint check (vehicle_type between 0 and 2),
+        year integer not null,
+        id bigint generated by default as identity,
+        brand varchar(255),
+        color varchar(255),
+        document varchar(255) unique,
+        fuel_type varchar(255),
+        name varchar(255),
+        plate varchar(255),
+        primary key (id)
+    )
+2024-09-14T16:00:22.703-03:00  WARN 9920 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    create table vehicle (
+        price float(53) not null,
+        vehicle_type tinyint check (vehicle_type between 0 and 2),
+        year integer not null,
+        id bigint generated by default as identity,
+        brand varchar(255),
+        color varchar(255),
+        document varchar(255) unique,
+        fuel_type varchar(255),
+        name varchar(255),
+        plate varchar(255),
+        primary key (id)
+    )" via JDBC [Syntax error in SQL statement "\000d\000a    create table vehicle (\000d\000a        price float(53) not null,\000d\000a        vehicle_type tinyint check (vehicle_type between 0 and 2),\000d\000a        [*]year integer not null,\000d\000a        id bigint generated by default as identity,\000d\000a        brand varchar(255),\000d\000a        color varchar(255),\000d\000a        document varchar(255) unique,\000d\000a        fuel_type varchar(255),\000d\000a        name varchar(255),\000d\000a        plate varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier";]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    create table vehicle (
+        price float(53) not null,
+        vehicle_type tinyint check (vehicle_type between 0 and 2),
+        year integer not null,
+        id bigint generated by default as identity,
+        brand varchar(255),
+        color varchar(255),
+        document varchar(255) unique,
+        fuel_type varchar(255),
+        name varchar(255),
+        plate varchar(255),
+        primary key (id)
+    )" via JDBC [Syntax error in SQL statement "\000d\000a    create table vehicle (\000d\000a        price float(53) not null,\000d\000a        vehicle_type tinyint check (vehicle_type between 0 and 2),\000d\000a        [*]year integer not null,\000d\000a        id bigint generated by default as identity,\000d\000a        brand varchar(255),\000d\000a        color varchar(255),\000d\000a        document varchar(255) unique,\000d\000a        fuel_type varchar(255),\000d\000a        name varchar(255),\000d\000a        plate varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier";]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createTables(SchemaCreatorImpl.java:428) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createSequencesTablesConstraints(SchemaCreatorImpl.java:344) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:239) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:172) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:142) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:118) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:250) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.prova.vehicleos.VehicleosApplication.main(VehicleosApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "\000d\000a    create table vehicle (\000d\000a        price float(53) not null,\000d\000a        vehicle_type tinyint check (vehicle_type between 0 and 2),\000d\000a        [*]year integer not null,\000d\000a        id bigint generated by default as identity,\000d\000a        brand varchar(255),\000d\000a        color varchar(255),\000d\000a        document varchar(255) unique,\000d\000a        fuel_type varchar(255),\000d\000a        name varchar(255),\000d\000a        plate varchar(255),\000d\000a        primary key (id)\000d\000a    )"; expected "identifier"; SQL statement:
+
+    create table vehicle (
+        price float(53) not null,
+        vehicle_type tinyint check (vehicle_type between 0 and 2),
+        year integer not null,
+        id bigint generated by default as identity,
+        brand varchar(255),
+        color varchar(255),
+        document varchar(255) unique,
+        fuel_type varchar(255),
+        name varchar(255),
+        plate varchar(255),
+        primary key (id)
+    ) [42001-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5533) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8994) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8939) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parseCreate(Parser.java:6404) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parsePrepared(Parser.java:666) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parse(Parser.java:592) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.parse(Parser.java:564) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Parser.prepareCommand(Parser.java:483) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.2.224.jar:2.2.224]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	... 44 common frames omitted
+
+2024-09-14T16:00:22.709-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists client_types 
+       add constraint FK1fux5fpa333n6rxm9nqipwfvl 
+       foreign key (client_id) 
+       references client
+2024-09-14T16:00:22.721-03:00 DEBUG 9920 --- [restartedMain] org.hibernate.SQL                        : 
+    alter table if exists purchase 
+       add constraint FK8uq2jliunjrfrf39pchx93cgf 
+       foreign key (vehiclee) 
+       references vehicle
+2024-09-14T16:00:22.721-03:00  WARN 9920 --- [restartedMain] o.h.t.s.i.ExceptionHandlerLoggedImpl     : GenerationTarget encountered exception accepting command : Error executing DDL "
+    alter table if exists purchase 
+       add constraint FK8uq2jliunjrfrf39pchx93cgf 
+       foreign key (vehiclee) 
+       references vehicle" via JDBC [Table "VEHICLE" not found;]
+
+org.hibernate.tool.schema.spi.CommandAcceptanceException: Error executing DDL "
+    alter table if exists purchase 
+       add constraint FK8uq2jliunjrfrf39pchx93cgf 
+       foreign key (vehiclee) 
+       references vehicle" via JDBC [Table "VEHICLE" not found;]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:94) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlString(Helper.java:233) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.Helper.applySqlStrings(Helper.java:217) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createForeignKeys(SchemaCreatorImpl.java:305) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.createFromMetadata(SchemaCreatorImpl.java:251) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.performCreation(SchemaCreatorImpl.java:172) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:142) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.internal.SchemaCreatorImpl.doCreation(SchemaCreatorImpl.java:118) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:250) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.lambda$process$5(SchemaManagementToolCoordinator.java:144) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at java.base/java.util.HashMap.forEach(HashMap.java:1421) ~[na:na]
+	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:141) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryObserverForSchemaExport.sessionFactoryCreated(SessionFactoryObserverForSchemaExport.java:37) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionFactoryObserverChain.sessionFactoryCreated(SessionFactoryObserverChain.java:35) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:322) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:457) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1506) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.12.jar:6.1.12]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.3.jar:3.3.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.3.jar:3.3.3]
+	at com.prova.vehicleos.VehicleosApplication.main(VehicleosApplication.java:12) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.3.3.jar:3.3.3]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "VEHICLE" not found; SQL statement:
+
+    alter table if exists purchase 
+       add constraint FK8uq2jliunjrfrf39pchx93cgf 
+       foreign key (vehiclee) 
+       references v [42102-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:204) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:74) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Command.executeUpdate(Command.java:256) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:262) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.2.224.jar:2.2.224]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.tool.schema.internal.exec.GenerationTargetToDatabase.accept(GenerationTargetToDatabase.java:80) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	... 43 common frames omitted
+
+2024-09-14T16:00:22.727-03:00 TRACE 9920 --- [restartedMain] o.h.type.spi.TypeConfiguration$Scope     : Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@1c8bf252] for TypeConfiguration
+2024-09-14T16:00:22.727-03:00  INFO 9920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-09-14T16:00:22.882-03:00  WARN 9920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-09-14T16:00:24.050-03:00  INFO 9920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-09-14T16:00:24.063-03:00  INFO 9920 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-09-14T16:00:24.154-03:00  INFO 9920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-09-14T16:00:24.171-03:00  INFO 9920 --- [restartedMain] c.prova.vehicleos.VehicleosApplication   : Started VehicleosApplication in 6.654 seconds (process running for 7.28)
+2024-09-14T16:00:26.557-03:00  INFO 9920 --- [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-09-14T16:00:26.557-03:00  INFO 9920 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-09-14T16:00:26.559-03:00  INFO 9920 --- [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "purchase")
-public class Purchase {
+public class Purchase{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
