@@ -10,13 +10,11 @@ import com.prova.domains.enums.ClientType;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -39,7 +37,7 @@ public class Client {
 
     //se der erro é aqui
     @ElementCollection(fetch = FetchType.EAGER)
-    @OneToMany(mappedBy  = "clientes")
+    @CollectionTable(name = "client_types")
     private Set<Integer> clientType = new HashSet<>();
 
     
@@ -47,7 +45,6 @@ public class Client {
     
     public Client(){
         super();
-        addClientType(null);
     }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
@@ -60,12 +57,6 @@ public class Client {
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
         //this.address = address;
-        addClientType(null);
-    }
-
-    
-    public void setClientType(Set<Integer> clientType) {
-        this.clientType = clientType;
     }
 
     /*public Address getAddress() {
@@ -76,13 +67,17 @@ public class Client {
         this.address = address;
     }*/
 
-    //get e set do enum
+    //get e set do enum igual a apostila
     public Set<ClientType> getClientType() {
         return clientType.stream().map(x -> ClientType.toEnum(x)).collect(Collectors.toSet());
     }
 
     public void addClientType(ClientType clientType) {
         this.clientType.add(clientType.getId());
+    }
+
+    public void setClientType(Set<Integer> clientType){
+        this.clientType = clientType;
     }
 
     public UUID getId() {
