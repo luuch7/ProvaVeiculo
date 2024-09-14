@@ -45,6 +45,7 @@ public class Client {
     
     public Client(){
         super();
+        addClientType(null);
     }
 
     public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
@@ -56,7 +57,7 @@ public class Client {
         this.password = password;
         this.dateBirth = dateBirth;
         this.phoneNumber = phoneNumber;
-        //this.address = address;
+        addClientType(null);
     }
 
     /*public Address getAddress() {
