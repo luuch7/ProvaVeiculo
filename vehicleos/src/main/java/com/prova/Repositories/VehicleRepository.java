@@ -6,6 +6,13 @@ import org.springframework.stereotype.Repository;
 import com.prova.domains.Vehicle;
 
 @Repository
+<<<<<<< Updated upstream
 public interface VehicleRepository extends JpaRepository<Vehicle, Long>{
+=======
+public interface VehicleRepository extends JpaRepository<Vehicle,long>{
+
+}
+
+>>>>>>> Stashed changes
     
 }
