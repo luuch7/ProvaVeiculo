@@ -36,13 +36,12 @@ public class Purchase{
     }
 
 
-    public Purchase(UUID id, String saleCode, String transactionMethod, String observation, LocalDate date,
+    public Purchase(UUID id, String saleCode, String transactionMethod, String observation,
             Vehicle vehicle) {
         this.id = id;
         this.saleCode = saleCode;
         this.transactionMethod = transactionMethod;
         this.observation = observation;
-        this.date = date;
         this.vehicle = vehicle;
     }
 
