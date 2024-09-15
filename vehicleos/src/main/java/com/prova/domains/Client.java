@@ -49,6 +49,18 @@ public class Client {
         addClientType(ClientType.NATURAL_PERSON);
     }
 
+    public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
+            String phoneNumber) {
+        this.id = id;
+        this.name = name;
+        this.cpfCnpj = cpfCnpj;
+        this.email = email;
+        this.password = password;
+        this.dateBirth = dateBirth;
+        this.phoneNumber = phoneNumber;
+        addClientType(ClientType.NATURAL_PERSON);
+    }
+
     public Client(ClientDTO obj) {
         this.id = obj.getId();
         this.name = obj.getName();
