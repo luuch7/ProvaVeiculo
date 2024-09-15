@@ -39,6 +39,17 @@ public class Address {
         this.country = obj.getCountry();
     }
 
+    public Address(int id, String street, int number, String state, String zipCode, String neighborhood,
+            String country) {
+        this.id = id;
+        this.street = street;
+        this.number = number;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.neighborhood = neighborhood;
+        this.country = country;
+    }
+
     public int getId() {
         return id;
     }
