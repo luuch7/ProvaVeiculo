@@ -3,7 +3,7 @@ package com.prova.domains.dtos;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import com.prova.domains.purchase;
+import com.prova.domains.Purchase;
 import com.prova.domains.Vehicle;
 
 
@@ -20,7 +20,7 @@ public class PurchaseDTO {
     }
 
     //refazer os construtor
-    public PurchaseDTO(purchase obj) {
+    public PurchaseDTO(Purchase obj) {
         this.id = obj.getId();
         this.saleCode = obj.getSaleCode();
         this.transactionMethod = obj.getTransactionMethod();

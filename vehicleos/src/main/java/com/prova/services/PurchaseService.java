@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.prova.repositories.PurchaseRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
-import com.prova.domains.dtos.NaturalPersonDTO;
 import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.domains.Purchase;
 
