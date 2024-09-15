@@ -29,7 +29,6 @@ public class Address {
     public Address() {
     }
 
-    /* 
     public Address(int id, String street, int number, String state, String zipCode, String neighborhood,
             String country) {
         this.id = id;
@@ -40,7 +39,6 @@ public class Address {
         this.neighborhood = neighborhood;
         this.country = country;
     }
-    */
 
     public Address(AddressDTO obj) {
         this.id = obj.getId();
