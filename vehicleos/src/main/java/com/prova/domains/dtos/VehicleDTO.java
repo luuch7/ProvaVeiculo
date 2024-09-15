@@ -2,16 +2,35 @@ package com.prova.domains.dtos;
 
 import com.prova.domains.Vehicle;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class VehicleDTO {
     
     protected long id;
+        @NotNull(message = "o Campo name não pode ser nulo")
+    @NotBlank(message = "O campo name não pode ser vazio")
     protected String name;
+    @NotNull(message = "o Campo brand não pode ser nulo")
+    @NotBlank(message = "O campo brand não pode ser vazio")
     protected String brand;
+    @NotNull(message = "o Campo plate não pode ser nulo")
+    @NotBlank(message = "O campo plate não pode ser vazio")
     protected String plate;
+    @NotNull(message = "o Campo Year Vehicle não pode ser nulo")
+    @NotBlank(message = "O campo Year Vehicle não pode ser vazio")
     protected String yearVehicle;
+    @NotNull(message = "o Campo Color não pode ser nulo")
+    @NotBlank(message = "O campo Color não pode ser vazio")
     protected String color;
+    @NotNull(message = "o Campo Document não pode ser nulo")
+    @NotBlank(message = "O campo Document não pode ser vazio")
     protected String document;
+    @NotNull(message = "o Campo FuelType não pode ser nulo")
+    @NotBlank(message = "O campo FuelType não pode ser vazio")
     protected String fuelType;
+    @NotNull(message = "o Campo price não pode ser nulo")
+    @NotBlank(message = "O campo price não pode ser vazio")
     protected double price;
     
     

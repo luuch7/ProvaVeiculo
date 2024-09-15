@@ -6,14 +6,27 @@ import java.util.UUID;
 import com.prova.domains.Purchase;
 import com.prova.domains.Vehicle;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 
 public class PurchaseDTO {
     
     protected UUID id;
+    @NotNull(message = "o Campo Sale code não pode ser nulo")
+    @NotBlank(message = "O campo Sale code não pode ser vazio")
     protected String saleCode;
+    @NotNull(message = "o Campo Transaction Method não pode ser nulo")
+    @NotBlank(message = "O campo Transaction Method não pode ser vazio")
     protected String transactionMethod;
+    @NotNull(message = "o Campo Observation não pode ser nulo")
+    @NotBlank(message = "O campo Observation não pode ser vazio")
     protected String observation;
+    @NotNull(message = "o Campo Local date não pode ser nulo")
+    @NotBlank(message = "O campo Local date não podeLocal date")
     protected LocalDate date = LocalDate.now();
+    @NotNull(message = "o Campo Vehicle não pode ser nulo")
+    @NotBlank(message = "O campo Vehicle não pode ser vazio")
     protected Vehicle vehicle;
 
     public PurchaseDTO() {

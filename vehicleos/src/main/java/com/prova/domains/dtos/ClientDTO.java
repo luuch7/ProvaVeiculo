@@ -4,14 +4,29 @@ import java.util.UUID;
 
 import com.prova.domains.Client;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class ClientDTO {
     
     protected UUID id;
+        @NotNull(message = "o Campo name não pode ser nulo")
+    @NotBlank(message = "O campo name não pode ser vazio")
     protected String name;
+    @NotNull(message = "o Campo cpf/cnpj não pode ser nulo")
+    @NotBlank(message = "O campo cpf/cnpj não pode ser vazio")
     protected String cpfCnpj;
+    @NotNull(message = "o Campo email não pode ser nulo")
+    @NotBlank(message = "O campo email não pode ser vazio")
     protected String email;
+    @NotNull(message = "o Campo password não pode ser nulo")
+    @NotBlank(message = "O campo password não pode ser vazio")
     protected String password;
+    @NotNull(message = "o Campo date Birth não pode ser nulo")
+    @NotBlank(message = "O campo date Birth não pode ser vazio")
     protected String dateBirth;
+    @NotNull(message = "o Campo Phone number não pode ser nulo")
+    @NotBlank(message = "O campo Phone number não pode ser vazio")
     protected String phoneNumber;
     
     public ClientDTO() {

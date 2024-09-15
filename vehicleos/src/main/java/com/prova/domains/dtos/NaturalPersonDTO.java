@@ -8,15 +8,32 @@ import java.util.stream.Collectors;
 import com.prova.domains.NaturalPerson;
 import com.prova.domains.enums.ClientType;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class NaturalPersonDTO {
     
     protected UUID id;
+        @NotNull(message = "o Campo name não pode ser nulo")
+    @NotBlank(message = "O campo name não pode ser vazio")
     protected String name;
+    @NotNull(message = "o Campo Cpf/Cnpj não pode ser nulo")
+    @NotBlank(message = "O campo Cpf/Cnpj não pode ser vazio")
     protected String cpfCnpj;
+    @NotNull(message = "o Campo email não pode ser nulo")
+    @NotBlank(message = "O campo email não pode ser vazio")
     protected String email;
+    @NotNull(message = "o Campo Password não pode ser nulo")
+    @NotBlank(message = "O campo Password não pode ser vazio")
     protected String password;
+    @NotNull(message = "o Campo date birth não pode ser nulo")
+    @NotBlank(message = "O campo date birth não pode ser vazio")
     protected String dateBirth;
+    @NotNull(message = "o Campo PhoneNumber não pode ser nulo")
+    @NotBlank(message = "O campo PhoneNumber não pode ser vazio")
     protected String phoneNumber;
+    @NotNull(message = "o Campo Client type não pode ser nulo")
+    @NotBlank(message = "O campo Client type não pode ser vazio")
     protected Set<Integer> clientType = new HashSet<>();
     
     public NaturalPersonDTO() {

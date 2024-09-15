@@ -12,6 +12,7 @@ import com.prova.services.exceptions.ObjectNotFoundException;
 import com.prova.domains.Client;
 import com.prova.domains.dtos.ClientDTO;
 
+
 @Service
 public class ClientService {
 
@@ -30,6 +31,18 @@ public class ClientService {
         objDto.setId(null);
         Client newObj = new Client(objDto); //PROBLEMA AQUI Ò HIHIHIHHIHIHHI
         return cliRy.save(newObj);
+    }
+
+    public Client update(UUID id, ClientDTO objDto){
+        objDto.setId(id);
+        Client oldObj = findById(id);
+        oldObj = new Client(objDto);
+        return cliRy.save(oldObj);
+    }
+
+    public void delete(UUID id){
+        //NaturalPerson obj = findById(id);
+        cliRy.deleteById(id);
     }
 
 
