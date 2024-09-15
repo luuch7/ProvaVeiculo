@@ -32,5 +32,16 @@ public class ClientService {
         return cliRy.save(newObj);
     }
 
+    public Client update(UUID id, ClientDTO objDto){
+        objDto.setId(id);
+        Client oldObj = findById(id);
+        oldObj = new Client(objDto);
+        return cliRy.save(oldObj);
+    }
+
+    public void delete(UUID id){
+        //NaturalPerson obj = findById(id);
+        cliRy.deleteById(id);
+    }
 
 }

@@ -2,7 +2,6 @@ package com.prova.resources;
 
 import java.net.URI;
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.prova.domains.Address;
-import com.prova.domains.LegalEntity;
 import com.prova.domains.dtos.AddressDTO;
 import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.services.AddressService;
@@ -50,7 +48,7 @@ public class AddressResource {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<AddressDTO> update(@PathVariable int id, @Valid @RequestBody LegalEntityDTO objDto){
+    public ResponseEntity<AddressDTO> update(@PathVariable int id, @Valid @RequestBody AddressDTO objDto){
         Address obj = adressServ.update(id, objDto);
         return ResponseEntity.ok().body(new AddressDTO(obj));
     }

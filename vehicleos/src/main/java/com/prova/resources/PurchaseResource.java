@@ -16,11 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.prova.domains.Address;
-import com.prova.domains.LegalEntity;
 import com.prova.domains.Purchase;
-import com.prova.domains.dtos.AddressDTO;
-import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.services.PurchaseService;
 

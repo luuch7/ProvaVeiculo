@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.prova.domains.Client;
-import com.prova.domains.LegalEntity;
 import com.prova.domains.dtos.ClientDTO;
-import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.services.ClientService;
 
 import jakarta.validation.Valid;

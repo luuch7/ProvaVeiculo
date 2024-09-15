@@ -31,5 +31,15 @@ public class PurchaseService {
         return puRepo.save(newObj);
     }
     
+    public Purchase update(UUID id, PurchaseDTO objDto){
+        objDto.setId(id);
+        Purchase oldObj = findById(id);
+        oldObj = new Purchase(objDto);
+        return puRepo.save(oldObj);
+    }
 
+    public void delete(UUID id){
+        //NaturalPerson obj = findById(id);
+        puRepo.deleteById(id);
+    }
 }
