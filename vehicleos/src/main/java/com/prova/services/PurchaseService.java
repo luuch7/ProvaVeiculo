@@ -14,7 +14,7 @@ import com.prova.domains.Purchase;
 
 @Service
 public class PurchaseService {
-
+        //erro no Purchase AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
     private PurchaseRepository puRepo;
 
     public List<PurchaseDTO> findAll(){
