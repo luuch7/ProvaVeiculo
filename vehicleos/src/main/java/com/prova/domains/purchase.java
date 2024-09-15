@@ -36,6 +36,13 @@ public class Purchase{
     public Purchase() {
     }
 
+    public Purchase(UUID id, String saleCode, String transactionMethod, String observation, Vehicle vehicle) {
+        this.id = id;
+        this.saleCode = saleCode;
+        this.transactionMethod = transactionMethod;
+        this.observation = observation;
+        this.vehicle = vehicle;
+    }
 
     public Purchase(PurchaseDTO obj) {
         this.id = obj.getId();
