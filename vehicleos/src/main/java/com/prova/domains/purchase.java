@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.prova.domains.dtos.PurchaseDTO;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,13 +37,13 @@ public class Purchase{
     }
 
 
-    public Purchase(UUID id, String saleCode, String transactionMethod, String observation,
-            Vehicle vehicle) {
-        this.id = id;
-        this.saleCode = saleCode;
-        this.transactionMethod = transactionMethod;
-        this.observation = observation;
-        this.vehicle = vehicle;
+    public Purchase(PurchaseDTO obj) {
+        this.id = obj.getId();
+        this.saleCode = obj.getSaleCode();
+        this.transactionMethod = obj.getTransactionMethod();
+        this.observation = obj.getObservation();
+        this.date = obj.getDate();
+        this.vehicle = obj.getVehicle();
     }
 
 

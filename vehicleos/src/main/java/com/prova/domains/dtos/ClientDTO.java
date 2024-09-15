@@ -2,6 +2,8 @@ package com.prova.domains.dtos;
 
 import java.util.UUID;
 
+import com.prova.domains.Client;
+
 public class ClientDTO {
     
     protected UUID id;
@@ -15,15 +17,14 @@ public class ClientDTO {
     public ClientDTO() {
     }
 
-    public ClientDTO(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber) {
-        this.id = id;
-        this.name = name;
-        this.cpfCnpj = cpfCnpj;
-        this.email = email;
-        this.password = password;
-        this.dateBirth = dateBirth;
-        this.phoneNumber = phoneNumber;
+    public ClientDTO(Client obj) {
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.cpfCnpj = obj.getCpfCnpj();
+        this.email = obj.getEmail();
+        this.password = obj.getPassword();
+        this.dateBirth = obj.getDateBirth();
+        this.phoneNumber = obj.getPhoneNumber();
     }
 
     public UUID getId() {

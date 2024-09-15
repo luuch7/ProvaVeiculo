@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import com.prova.domains.dtos.ClientDTO;
 import com.prova.domains.enums.ClientType;
 
 import jakarta.persistence.CollectionTable;
@@ -48,16 +49,14 @@ public class Client {
         addClientType(ClientType.NATURAL_PERSON);
     }
 
-    public Client(UUID id, String name, String cpfCnpj, String email, String password, String dateBirth,
-            String phoneNumber /*,Address address*/) {
-        this.id = id;
-        this.name = name;
-        this.cpfCnpj = cpfCnpj;
-        this.email = email;
-        this.password = password;
-        this.dateBirth = dateBirth;
-        this.phoneNumber = phoneNumber;
-        addClientType(ClientType.NATURAL_PERSON);
+    public Client(ClientDTO obj) {
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.cpfCnpj = obj.getCpfCnpj();
+        this.email = obj.getEmail();
+        this.password = obj.getPassword();
+        this.dateBirth = obj.getDateBirth();
+        this.phoneNumber = obj.getPhoneNumber();
     }
 
     /*public Address getAddress() {
