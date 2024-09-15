@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.prova.domains.Address;
+import com.prova.domains.LegalEntity;
 import com.prova.domains.dtos.AddressDTO;
+import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.repositories.AdressRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
@@ -27,9 +29,23 @@ public class AddressService {
     }
 
     public Address create(AddressDTO objDto){
-        objDto.setId(null);
+        objDto.setId(+1);
         Address newObj = new Address(objDto);
         return AddRepo.save(newObj);
     }
+
+    public Address update(int id, AddressDTO objDto){
+        objDto.setId(id);
+        Address oldObj = findById();
+        oldObj = new Address(objDto);
+        return AddRepo.save(oldObj);
+    }
+
+    public void delete(int id){
+        //NaturalPerson obj = findById(id);
+        AddRepo.deleteById(id);
+    }
+
+
 
 }
