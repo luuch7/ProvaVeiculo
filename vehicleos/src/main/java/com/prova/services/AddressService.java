@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.prova.domains.Address;
 import com.prova.domains.dtos.AddressDTO;
-import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.repositories.AdressRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
 
@@ -22,14 +21,13 @@ public class AddressService {
     }
 
     public Address findById(int id){
-        Optional<Address> obj = AddRepo.findById(null);
+        Optional<Address> obj = AddRepo.findById(id); //acho q ta certo
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! id: "+id));
     }
 
     public Address create(AddressDTO objDto){
-        objDto.setId(null);
+        objDto.setId(+1);//isso aqui foi baianagem mais se der certo boa
         Address newObj = new Address(objDto);
         return AddRepo.save(newObj);
     }
-
 }
