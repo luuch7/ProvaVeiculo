@@ -58,4 +58,17 @@ public class NaturalPersonService {
             
         }
     }
+
+    public NaturalPerson update(UUID id, NaturalPersonDTO objDto){
+        objDto.setId(id);
+        NaturalPerson oldObj = findById(id);
+        ValidarPorCpfCnpjeEmail(objDto);
+        oldObj = new NaturalPerson(objDto);
+        return natRepo.save(oldObj);
+    }
+
+    public void delete(UUID id){
+        //NaturalPerson obj = findById(id);
+        natRepo.deleteById(id);
+    }
 }
