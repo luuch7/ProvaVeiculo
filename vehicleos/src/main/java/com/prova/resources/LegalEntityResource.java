@@ -18,6 +18,8 @@ import com.prova.domains.LegalEntity;
 import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.services.LegalEntityService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/legalentity")
 public class LegalEntityResource {
@@ -43,8 +45,14 @@ public class LegalEntityResource {
         return ResponseEntity.ok().body(new LegalEntityDTO(obj));
     }
 
+    @GetMapping(value = "/email/{email}")
+    public ResponseEntity<LegalEntityDTO> findByEmail(@PathVariable String email){
+        LegalEntity obj = this.legalService.findByEmail(email);
+        return ResponseEntity.ok().body(new LegalEntityDTO(obj));
+    }
+
     @PostMapping
-    public ResponseEntity<LegalEntityDTO> create(@RequestBody LegalEntityDTO objDto){
+    public ResponseEntity<LegalEntityDTO> create(@Valid @RequestBody LegalEntityDTO objDto){
         LegalEntity newObj = legalService.create(objDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();

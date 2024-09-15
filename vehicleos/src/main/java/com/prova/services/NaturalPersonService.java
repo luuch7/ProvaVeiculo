@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.prova.domains.NaturalPerson;
 import com.prova.domains.dtos.NaturalPersonDTO;
 import com.prova.repositories.NaturalPersonRepository;
+import com.prova.services.exceptions.DataIntegrityViolationException;
 import com.prova.services.exceptions.ObjectNotFoundException;
 
 @Service
@@ -33,9 +34,28 @@ public class NaturalPersonService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! id: "+cpfCnpj));
     }
 
+    public NaturalPerson findByEmail(String email) {
+        Optional<NaturalPerson> obj = natRepo.findByEmail(email);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! Email: "+email));
+    }
+
     public NaturalPerson create(NaturalPersonDTO objDto){
         objDto.setId(null);
+        ValidarPorCpfCnpjeEmail(objDto);
         NaturalPerson newObj = new NaturalPerson(objDto);
         return natRepo.save(newObj);
+    }
+
+    private void ValidarPorCpfCnpjeEmail(NaturalPersonDTO objDto){
+        Optional<NaturalPerson> obj = natRepo.findByCpfCnpj(objDto.getCpfCnpj());
+        if(obj.isPresent() && obj.get().getId() != objDto.getId()){
+            throw new DataIntegrityViolationException("CPF/CNPJ ja ta cadastrado no sistema");
+        }
+
+        Optional<NaturalPerson> obj2 = natRepo.findByEmail(objDto.getEmail());
+            if(obj2.isPresent() && obj2.get().getId() != objDto.getId()){
+                throw new DataIntegrityViolationException("Email já cadastrado no sistema");
+            
+        }
     }
 }

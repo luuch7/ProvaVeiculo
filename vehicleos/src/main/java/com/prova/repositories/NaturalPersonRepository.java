@@ -12,5 +12,7 @@ import com.prova.domains.NaturalPerson;
 public interface NaturalPersonRepository extends JpaRepository<NaturalPerson, UUID>{
 
     Optional<NaturalPerson> findByCpfCnpj(String cpfCnpj);
+
+    Optional<NaturalPerson> findByEmail(String email);
     
 }
