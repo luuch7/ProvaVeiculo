@@ -20,10 +20,10 @@ public class PurchaseDTO {
     //refazer os construtor
     public PurchaseDTO(Purchase obj) {
         this.id = obj.getId();
-        this.saleCode = saleCode;
-        this.transactionMethod = transactionMethod;
-        this.observation = observation;
-        this.date = date;
+        this.saleCode = obj.getSaleCode();
+        this.transactionMethod = obj.getTransactionMethod();
+        this.observation = obj.getObservation();
+        this.date = obj.getDate();
     }
 
     public UUID getId() {
