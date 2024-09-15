@@ -21,7 +21,7 @@ public class Vehicle {
     private String name;
     private String brand;
     private String plate;  // Corrigido de "palte" para "plate"
-    private int year;
+    private String yearVehicle;
     private String color;
 
     @Column(unique = true)
@@ -37,13 +37,13 @@ public class Vehicle {
         super();
     }
 
-    public Vehicle(long id, String name, String brand, String plate, int year, String color, String document,
+    public Vehicle(long id, String name, String brand, String plate, String yearVehicle, String color, String document,
             String fuelType, double price, VehicleType vehicleType) {
         this.id = id;
         this.name = name;
         this.brand = brand;
         this.plate = plate;
-        this.year = year;
+        this.yearVehicle = yearVehicle;
         this.color = color;
         this.document = document;
         this.fuelType = fuelType;
@@ -84,12 +84,12 @@ public class Vehicle {
         this.plate = plate;
     }
 
-    public int getYear() {
-        return year;
+    public String getYearVehicle() {
+        return yearVehicle;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYearVehicle(String yearVehicle) {
+        this.yearVehicle = yearVehicle;
     }
 
     public String getColor() {

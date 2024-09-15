@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.prova.domains.Address;
 import com.prova.domains.Client;
-import com.prova.domains.NaturalPerson;
 import com.prova.domains.Purchase;
 import com.prova.domains.Vehicle;
 import com.prova.domains.enums.VehicleType;
@@ -23,27 +22,27 @@ public class DBService {
     private AdressRepository adressRepo;
 
     @Autowired
-    private NaturalPerson natuRepo;
-
-    @Autowired
     private VehicleRepository vehicleRepo;
 
     @Autowired
     private PurchaseRepository purchaseRepo;
 
+    @Autowired
+    private ClientRepository clientRepo;
+
     public void initDB(){
         
         Address ad1 = new Address(1, "Rua Tal", 67, "Estado tal", "123.456-11", "Bairro Tal", "País tal");
-
-        NaturalPerson natu1 = new NaturalPerson(null, "Fulano de Tal", "12345678", "fulano@email.com", "admin", "01/01/2001", "11 1111-1111");
         
-        Vehicle vehicle1 = new Vehicle(1, "Carro tal", "Marca tal", "123", 1999, "Branco Escuro", "456", "Gasolina", 1999, VehicleType.CAR);
+        Vehicle vehicle1 = new Vehicle(1, "Carro tal", "Marca tal", "123", "1999", "Branco Escuro", "456", "Gasolina", 1200.00, VehicleType.CAR);
 
         Purchase purchase1 = new Purchase(null, "codigo tal", "Observação Tal", null, vehicle1);
+
+        Client client1 = new Client(null, "Fulano", "123.123.123-00", "fulano@email.com", "senha123", "11/09/199", "12345678");
 
         adressRepo.save(ad1);
         vehicleRepo.save(vehicle1);
         purchaseRepo.save(purchase1);
-        //natuRepo.save(natu1);
+        clientRepo.save(client1);
     }
 }
