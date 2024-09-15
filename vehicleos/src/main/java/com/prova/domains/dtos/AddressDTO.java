@@ -1,48 +1,21 @@
-package com.prova.domains;
+package com.prova.domains.dtos;
 
-import com.prova.domains.dtos.AddressDTO;
+import com.prova.domains.Address;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "address")
-public class Address {
+public class AddressDTO {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String street;
-
-    @Column(unique = true)
-    private int number;
+    protected int id;
+    protected String street;
+    protected int number;
+    protected String state;
+    protected String zipCode;
+    protected String neighborhood;
+    protected String country;
     
-    private String state;
-    private String zipCode;
-    private String neighborhood;
-    private String country;
-    
-    public Address() {
+    public AddressDTO() {
     }
 
-    /* 
-    public Address(int id, String street, int number, String state, String zipCode, String neighborhood,
-            String country) {
-        this.id = id;
-        this.street = street;
-        this.number = number;
-        this.state = state;
-        this.zipCode = zipCode;
-        this.neighborhood = neighborhood;
-        this.country = country;
-    }
-    */
-
-    public Address(AddressDTO obj) {
+    public AddressDTO(Address obj) {
         this.id = obj.getId();
         this.street = obj.getStreet();
         this.number = obj.getNumber();
