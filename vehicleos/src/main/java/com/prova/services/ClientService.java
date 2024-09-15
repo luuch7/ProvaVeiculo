@@ -28,7 +28,7 @@ public class ClientService {
 
         public Client create(ClientDTO objDto){ 
         objDto.setId(null);
-        Client newObj = new ClientDTO(objDto); //PROBLEMA AQUI Ò HIHIHIHHIHIHHI
+        Client newObj = new Client(objDto); //PROBLEMA AQUI Ò HIHIHIHHIHIHHI
         return cliRy.save(newObj);
     }
 
