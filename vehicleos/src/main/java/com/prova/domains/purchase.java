@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "purchase")
-public class purchase{
+public class Purchase{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -33,11 +33,11 @@ public class purchase{
     @JoinColumn(name = "vehiclee")
     private Vehicle vehicle;
 
-    public purchase() {
+    public Purchase() {
     }
 
 
-    public purchase(PurchaseDTO obj) {
+    public Purchase(PurchaseDTO obj) {
         this.id = obj.getId();
         this.saleCode = obj.getSaleCode();
         this.transactionMethod = obj.getTransactionMethod();
