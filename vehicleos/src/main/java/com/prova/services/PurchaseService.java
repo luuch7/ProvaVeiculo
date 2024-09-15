@@ -26,7 +26,7 @@ public class PurchaseService {
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! id: "+id));
     }
 
-    public Purchase create(Purchase objDto){
+    public Purchase create(PurchaseDTO objDto){
         objDto.setId(null);
         Purchase newObj = new Purchase(objDto);
         return puRepo.save(newObj);

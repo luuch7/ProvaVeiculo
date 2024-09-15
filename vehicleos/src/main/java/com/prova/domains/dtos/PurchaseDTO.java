@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 import com.prova.domains.Purchase;
+import com.prova.domains.Vehicle;
 
 
 public class PurchaseDTO {
@@ -13,7 +14,8 @@ public class PurchaseDTO {
     protected String transactionMethod;
     protected String observation;
     protected LocalDate date = LocalDate.now();
-    
+    protected Vehicle vehicle;
+
     public PurchaseDTO() {
     }
 
@@ -24,6 +26,7 @@ public class PurchaseDTO {
         this.transactionMethod = obj.getTransactionMethod();
         this.observation = obj.getObservation();
         this.date = obj.getDate();
+        this.vehicle = obj.getVehicle();
     }
 
     public UUID getId() {
@@ -64,6 +67,14 @@ public class PurchaseDTO {
 
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     
