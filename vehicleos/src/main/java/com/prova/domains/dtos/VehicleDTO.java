@@ -1,12 +1,14 @@
 package com.prova.domains.dtos;
 
+import com.prova.domains.Vehicle;
+
 public class VehicleDTO {
     
     protected long id;
     protected String name;
     protected String brand;
-    protected String palte;
-    protected int year;
+    protected String plate;
+    protected String yearVehicle;
     protected String color;
     protected String document;
     protected String fuelType;
@@ -17,17 +19,16 @@ public class VehicleDTO {
     }
 
 
-    public VehicleDTO(long id, String name, String brand, String palte, int year, String color, String document,
-            String fuelType, double price) {
-        this.id = id;
-        this.name = name;
-        this.brand = brand;
-        this.palte = palte;
-        this.year = year;
-        this.color = color;
-        this.document = document;
-        this.fuelType = fuelType;
-        this.price = price;
+    public VehicleDTO(Vehicle obj) {
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.brand = obj.getBrand();
+        this.plate = obj.getPlate();
+        this.yearVehicle = obj.getYearVehicle();
+        this.color = obj.getColor();
+        this.document = obj.getDocument();
+        this.fuelType = obj.getFuelType();
+        this.price = obj.getPrice();
     }
 
 
@@ -61,23 +62,23 @@ public class VehicleDTO {
     }
 
 
-    public String getPalte() {
-        return palte;
+    public String getPlate() {
+        return plate;
     }
 
 
-    public void setPalte(String palte) {
-        this.palte = palte;
+    public void setPlate(String plate) {
+        this.plate = plate;
     }
 
 
-    public int getYear() {
-        return year;
+    public String getYearVehicle() {
+        return yearVehicle;
     }
 
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYearVehicle(String yearVehicle) {
+        this.yearVehicle = yearVehicle;
     }
 
 
@@ -119,9 +120,7 @@ public class VehicleDTO {
     public void setPrice(double price) {
         this.price = price;
     }
-
     
     
-
     
 }

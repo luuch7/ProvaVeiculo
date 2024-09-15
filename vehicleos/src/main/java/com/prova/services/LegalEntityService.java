@@ -58,4 +58,17 @@ public class LegalEntityService {
             
         }
     }
+
+    public LegalEntity update(UUID id, LegalEntityDTO objDto){
+        objDto.setId(id);
+        LegalEntity oldObj = findById(id);
+        ValidarPorCpfCnpjeEmail(objDto);
+        oldObj = new LegalEntity(objDto);
+        return legalRepo.save(oldObj);
+    }
+
+    public void delete(UUID id){
+        //NaturalPerson obj = findById(id);
+        legalRepo.deleteById(id);
+    }
 }

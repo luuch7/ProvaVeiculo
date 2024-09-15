@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
+import com.prova.domains.dtos.VehicleDTO;
 import com.prova.domains.enums.VehicleType;
 
 import jakarta.persistence.Column;
@@ -37,6 +38,7 @@ public class Vehicle {
         super();
     }
 
+    /*
     public Vehicle(long id, String name, String brand, String plate, String yearVehicle, String color, String document,
             String fuelType, double price, VehicleType vehicleType) {
         this.id = id;
@@ -49,6 +51,20 @@ public class Vehicle {
         this.fuelType = fuelType;
         this.price = price;
         this.vehicleType = vehicleType;
+    }
+
+    */
+
+    public Vehicle(VehicleDTO obj) {
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.brand = obj.getBrand();
+        this.plate = obj.getPlate();
+        this.yearVehicle = obj.getYearVehicle();
+        this.color = obj.getColor();
+        this.document = obj.getDocument();
+        this.fuelType = obj.getFuelType();
+        this.price = obj.getPrice();
     }
 
     // Getters e setters
