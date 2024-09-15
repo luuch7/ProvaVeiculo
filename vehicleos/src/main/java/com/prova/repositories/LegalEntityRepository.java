@@ -12,5 +12,7 @@ public interface LegalEntityRepository extends JpaRepository<LegalEntity, UUID>{
 
     //ver se pode dps
     Optional<LegalEntity> findByCpfCnpj(String cpfCnpj);
+
+    Optional<LegalEntity> findByEmail(String email);
     
 }

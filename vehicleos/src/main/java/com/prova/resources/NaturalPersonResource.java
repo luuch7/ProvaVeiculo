@@ -18,6 +18,8 @@ import com.prova.domains.NaturalPerson;
 import com.prova.domains.dtos.NaturalPersonDTO;
 import com.prova.services.NaturalPersonService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping(value = "/naturalperson")
 public class NaturalPersonResource {
@@ -42,8 +44,15 @@ public class NaturalPersonResource {
         return ResponseEntity.ok().body(new NaturalPersonDTO(obj));
     }
 
+    //Estou ficando louco HAHAHAHAHAHAYHHAHAHAAHAHHAAHAHA
+    @GetMapping(value = "/email/{email}")
+    public ResponseEntity<NaturalPersonDTO> findByEmail(@PathVariable String email){
+        NaturalPerson obj = this.natService.findByEmail(email);
+        return ResponseEntity.ok().body(new NaturalPersonDTO(obj));
+    }
+    
     @PostMapping
-    public ResponseEntity<NaturalPersonDTO> create(@RequestBody NaturalPersonDTO objDto){
+    public ResponseEntity<NaturalPersonDTO> create(@Valid @RequestBody NaturalPersonDTO objDto){
         NaturalPerson newObj = natService.create(objDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();
