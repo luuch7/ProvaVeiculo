@@ -21,7 +21,7 @@ public class AddressService {
     }
 
     public Address findById(int id){
-        Optional<Address> obj = AddRepo.findById(null);
+        Optional<Address> obj = AddRepo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! id: "+id));
     }
 
