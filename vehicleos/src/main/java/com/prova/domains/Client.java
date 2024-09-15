@@ -23,22 +23,22 @@ public class Client {
     
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    protected UUID id;
 
     @Column(unique = true)
-    private String name;
+    protected String name;
 
     @Column(unique = true)
-    private String cpfCnpj;
-    private String email;
-    private String password;
-    private String dateBirth;
-    private String phoneNumber;
+    protected String cpfCnpj;
+    protected String email;
+    protected String password;
+    protected String dateBirth;
+    protected String phoneNumber;
 
     //se der erro é aqui
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "client_types")
-    private Set<Integer> clientType = new HashSet<>();
+    protected Set<Integer> clientType = new HashSet<>();
 
     
     //private Address address;

@@ -2,6 +2,7 @@ package com.prova.domains;
 
 import java.util.UUID;
 
+import com.prova.domains.dtos.LegalEntityDTO;
 import com.prova.domains.enums.ClientType;
 
 import jakarta.persistence.Entity;
@@ -20,4 +21,15 @@ public class LegalEntity extends Client{
         addClientType(ClientType.LEGAL_ENTITY);
     }
     
+    public LegalEntity(LegalEntityDTO obj){
+        this.id = obj.getId();
+        this.name = obj.getName();
+        this.cpfCnpj = obj.getCpfCnpj();
+        this.email = obj.getEmail();
+        this.password = obj.getPassword();
+        this.dateBirth = obj.getDateBirth();
+        this.phoneNumber = obj.getPhoneNumber();
+        addClientType(ClientType.NATURAL_PERSON);
+        addClientType(ClientType.LEGAL_ENTITY);
+    }
 }
