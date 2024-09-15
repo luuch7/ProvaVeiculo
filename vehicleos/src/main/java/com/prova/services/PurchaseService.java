@@ -10,7 +10,7 @@ import com.prova.repositories.PurchaseRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
 import com.prova.domains.dtos.NaturalPersonDTO;
 import com.prova.domains.dtos.PurchaseDTO;
-import com.prova.domains.Purchase;
+import com.prova.domains.purchase;
 
 @Service
 public class PurchaseService {
@@ -21,14 +21,14 @@ public class PurchaseService {
         return puRepo.findAll().stream().map(obj -> new PurchaseDTO(obj)).collect(Collectors.toList());
     }
 
-    public Purchase findById(UUID id){
-        Optional<Purchase> obj =puRepo.findById(id);
+    public purchase findById(UUID id){
+        Optional<purchase> obj =puRepo.findById(id);
         return obj.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado! id: "+id));
     }
 
-    public Purchase create(PurchaseDTO objDto){
+    public purchase create(PurchaseDTO objDto){
         objDto.setId(null);
-        Purchase newObj = new Purchase(objDto);
+        purchase newObj = new purchase(objDto);
         return puRepo.save(newObj);
     }
     

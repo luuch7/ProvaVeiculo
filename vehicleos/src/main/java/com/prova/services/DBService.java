@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.prova.domains.Address;
 import com.prova.domains.Client;
-import com.prova.domains.Purchase;
+import com.prova.domains.purchase;
 import com.prova.domains.Vehicle;
 import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.domains.enums.VehicleType;
@@ -37,7 +37,7 @@ public class DBService {
         
         Vehicle vehicle1 = new Vehicle(1, "Carro tal", "Marca tal", "123", "1999", "Branco Escuro", "456", "Gasolina", 1200.00, VehicleType.CAR);
         //ARRUMAR SAMERDA
-        Purchase purchase1 = new Purchase(null, "codigo tal", "Observação Tal", null, vehicle1);
+        purchase purchase1 = new purchase(null, "codigo tal", "Observação Tal", null, vehicle1);
 
         Client client1 = new Client(null, "Fulano", "123.123.123-00", "fulano@email.com", "senha123", "11/09/199", "12345678");
 
