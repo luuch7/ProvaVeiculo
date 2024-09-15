@@ -38,7 +38,6 @@ public class Vehicle {
         super();
     }
 
-    /*
     public Vehicle(long id, String name, String brand, String plate, String yearVehicle, String color, String document,
             String fuelType, double price, VehicleType vehicleType) {
         this.id = id;
@@ -52,8 +51,6 @@ public class Vehicle {
         this.price = price;
         this.vehicleType = vehicleType;
     }
-
-    */
 
     public Vehicle(VehicleDTO obj) {
         this.id = obj.getId();
