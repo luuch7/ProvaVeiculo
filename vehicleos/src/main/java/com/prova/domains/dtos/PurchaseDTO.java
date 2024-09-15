@@ -3,7 +3,8 @@ package com.prova.domains.dtos;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.prova.domains.Purchase;
+
 
 public class PurchaseDTO {
     
@@ -11,14 +12,14 @@ public class PurchaseDTO {
     protected String saleCode;
     protected String transactionMethod;
     protected String observation;
-    @JsonFormat(pattern = "dd/MM/yyyy")
     protected LocalDate date = LocalDate.now();
     
     public PurchaseDTO() {
     }
 
-    public PurchaseDTO(UUID id, String saleCode, String transactionMethod, String observation, LocalDate date) {
-        this.id = id;
+    //refazer os construtor
+    public PurchaseDTO(Purchase obj) {
+        this.id = obj.getId();
         this.saleCode = saleCode;
         this.transactionMethod = transactionMethod;
         this.observation = observation;

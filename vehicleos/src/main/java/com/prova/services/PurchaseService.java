@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.prova.repositories.PurchaseRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
+import com.prova.domains.dtos.NaturalPersonDTO;
 import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.domains.Purchase;
 
@@ -17,7 +18,7 @@ public class PurchaseService {
     private PurchaseRepository puRepo;
 
     public List<PurchaseDTO> findAll(){
-        return puRepo.findAll().stream().map(obj-> new PurchaseDTO(obj)).collect(Collectors.toList());
+        return puRepo.findAll().stream().map(obj -> new PurchaseDTO(obj)).collect(Collectors.toList());
     }
 
     public Purchase findById(UUID id){
