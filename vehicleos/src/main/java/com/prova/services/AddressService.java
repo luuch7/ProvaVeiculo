@@ -7,10 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.prova.domains.Address;
-import com.prova.domains.LegalEntity;
 import com.prova.domains.dtos.AddressDTO;
-import com.prova.domains.dtos.LegalEntityDTO;
-import com.prova.domains.dtos.PurchaseDTO;
 import com.prova.repositories.AdressRepository;
 import com.prova.services.exceptions.ObjectNotFoundException;
 
@@ -36,7 +33,7 @@ public class AddressService {
 
     public Address update(int id, AddressDTO objDto){
         objDto.setId(id);
-        Address oldObj = findById();
+        Address oldObj = findById(id);
         oldObj = new Address(objDto);
         return AddRepo.save(oldObj);
     }
