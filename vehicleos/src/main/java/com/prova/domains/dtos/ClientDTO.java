@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 public class ClientDTO {
     
     protected UUID id;
-        @NotNull(message = "o Campo name não pode ser nulo")
+    @NotNull(message = "o Campo name não pode ser nulo")
     @NotBlank(message = "O campo name não pode ser vazio")
     protected String name;
     @NotNull(message = "o Campo cpf/cnpj não pode ser nulo")
