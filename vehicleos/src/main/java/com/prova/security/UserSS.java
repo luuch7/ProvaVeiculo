@@ -1,6 +1,7 @@
 package com.prova.security;
 
 import com.prova.domains.Client;
+import com.prova.domains.NaturalPerson;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +15,11 @@ public class UserSS implements UserDetails {
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserSS(Client client) {
-        this.username = client.getEmail();
-        this.password = client.getPassword();
-        this.authorities = client.getClientType().stream().map(x -> new SimpleGrantedAuthority(x.getClientType()))
+    //public UserSS(NaturalPerson naturalPerson)
+    public UserSS(Client naturalPerson){
+        this.username = naturalPerson.getEmail();
+        this.password = naturalPerson.getPassword();
+        this.authorities = naturalPerson.getClientType().stream().map(x -> new SimpleGrantedAuthority(x.getClientType()))
                 .collect(Collectors.toSet());
     }
 

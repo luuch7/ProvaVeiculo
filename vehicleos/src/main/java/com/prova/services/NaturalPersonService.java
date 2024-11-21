@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.prova.domains.NaturalPerson;
@@ -19,6 +20,9 @@ public class NaturalPersonService {
     
     @Autowired
     private NaturalPersonRepository natRepo;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 
     public List<NaturalPersonDTO> findAll(){
         return natRepo.findAll().stream().map(obj -> new NaturalPersonDTO(obj)).collect(Collectors.toList());
@@ -41,6 +45,7 @@ public class NaturalPersonService {
 
     public NaturalPerson create(NaturalPersonDTO objDto){
         objDto.setId(null);
+        objDto.setPassword(encoder.encode(objDto.getPassword()));
         ValidarPorCpfCnpjeEmail(objDto);
         NaturalPerson newObj = new NaturalPerson(objDto);
         return natRepo.save(newObj);
