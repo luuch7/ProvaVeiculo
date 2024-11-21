@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,12 +34,14 @@ public class NaturalPersonResource {
     private NaturalPersonService natService;
 
     @Operation(summary = "Listar todos", description = "Retorna uma lista com todos os dados")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping //http://localhost:8080/naturalperson
     public ResponseEntity<List<NaturalPersonDTO>> findAll(){
         return ResponseEntity.ok().body(natService.findAll());
     }
 
     @Operation(summary = "Busca por ID", description = "Retorna dados com base no ID fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/{id}") //http://localhost:8080/naturalperson/1
     public ResponseEntity<NaturalPersonDTO> findById(@PathVariable UUID id){
         NaturalPerson obj = this.natService.findById(id);
@@ -46,6 +49,7 @@ public class NaturalPersonResource {
     }
 
     @Operation(summary = "Busca por CPF ou CNPJ", description = "Retonar dados com base no CPF ou CNPJ fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/cpfcnpj/{cpfcnpj}") //http://localhost:8080/naturalperson/cpfcnpj/(numero do cpfCnpj)
     public ResponseEntity<NaturalPersonDTO> findByCpfCnpj(@PathVariable String cpfcnpj){
         NaturalPerson obj = this.natService.findByCpfCnpj(cpfcnpj);
@@ -54,6 +58,7 @@ public class NaturalPersonResource {
 
     //Estou ficando louco HAHAHAHAHAHAYHHAHAHAAHAHHAAHAHA
     @Operation(summary = "Buca por Email", description = "Retorna dados com base no email fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/email/{email}")
     public ResponseEntity<NaturalPersonDTO> findByEmail(@PathVariable String email){
         NaturalPerson obj = this.natService.findByEmail(email);
@@ -61,6 +66,7 @@ public class NaturalPersonResource {
     }
     
     @Operation(summary = "Cria um novo item", description = "Cria um novo item com base nos dados fornecidos")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @PostMapping
     public ResponseEntity<NaturalPersonDTO> create(@Valid @RequestBody NaturalPersonDTO objDto){
         NaturalPerson newObj = natService.create(objDto);
@@ -69,6 +75,7 @@ public class NaturalPersonResource {
     }
 
     @Operation(summary = "Atualiza dados", description = "Atualiza os dado existente com base no id fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<NaturalPersonDTO> update(@PathVariable UUID id, @Valid @RequestBody NaturalPersonDTO objDto){
         NaturalPerson obj = natService.update(id, objDto);
@@ -76,6 +83,7 @@ public class NaturalPersonResource {
     }
 
     @Operation(summary = "Deleta um item", description = "Remove um item existem com base no ID fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<NaturalPersonDTO> delete(@PathVariable UUID id){
         natService.delete(id);

@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,6 +34,7 @@ public class LegalEntityResource {
     private LegalEntityService legalService;
 
     @Operation(summary = "Listar todos", description = "Retorna uma lista com todos os dados")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping //http://localhost:8080/legalentity
     public ResponseEntity<List<LegalEntityDTO>> findAll(){
         return ResponseEntity.ok().body(legalService.findAll());
@@ -40,6 +42,7 @@ public class LegalEntityResource {
 
     //to meio louco se der erro é aq
     @Operation(summary = "Busca por ID", description = "Retorna dados com base no ID fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/{id}") //http://localhost:8080/legalentity/1
     public ResponseEntity<LegalEntityDTO> findById(@PathVariable UUID id){
         LegalEntity obj = this.legalService.findById(id);
@@ -47,6 +50,7 @@ public class LegalEntityResource {
     }
     
     @Operation(summary = "Busca por CPF ou CNPJ", description = "Retonar dados com base no CPF ou CNPJ fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/cpfcnpj/{cpfCnpj}")
     public ResponseEntity<LegalEntityDTO> findByCpfCnpj(@PathVariable String cpfCnpj){
         LegalEntity obj = this.legalService.findByCpfCnpj(cpfCnpj);
@@ -54,6 +58,7 @@ public class LegalEntityResource {
     }
 
     @Operation(summary = "Buca por Email", description = "Retorna dados com base no email fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @GetMapping(value = "/email/{email}")
     public ResponseEntity<LegalEntityDTO> findByEmail(@PathVariable String email){
         LegalEntity obj = this.legalService.findByEmail(email);
@@ -61,6 +66,7 @@ public class LegalEntityResource {
     }
 
     @Operation(summary = "Cria um novo item", description = "Cria um novo item com base nos dados fornecidos")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @PostMapping
     public ResponseEntity<LegalEntityDTO> create(@Valid @RequestBody LegalEntityDTO objDto){
         LegalEntity newObj = legalService.create(objDto);
@@ -69,6 +75,7 @@ public class LegalEntityResource {
     }
 
     @Operation(summary = "Atualiza dados", description = "Atualiza os dado existente com base no id fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @PutMapping(value = "/{id}")
     public ResponseEntity<LegalEntityDTO> update(@PathVariable UUID id, @Valid @RequestBody LegalEntityDTO objDto){
         LegalEntity obj = legalService.update(id, objDto);
@@ -76,6 +83,7 @@ public class LegalEntityResource {
     }
 
     @Operation(summary = "Deleta um item", description = "Remove um item existem com base no ID fornecido")
+    @PreAuthorize("hasRole('LEGAL_ENTITY') or hasRole('NATURAL_PERSON')")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<LegalEntityDTO> delete(@PathVariable UUID id){
         legalService.delete(id);
